@@ -1,0 +1,14 @@
+server:
+  port: 8081
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: simple-one-crud
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: ${DB_HOST}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
