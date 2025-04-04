@@ -1,0 +1,11 @@
+FROM openjdk:17-jdk
+LABEL author="Daniel"
+
+# The application's jar file
+ARG JAR_FILE
+
+# Add the application's jar to the container
+ADD ${JAR_FILE} simpleprogram.jar
+
+# Run the jar file
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/simpleprogram.jar"]
