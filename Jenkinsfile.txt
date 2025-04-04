@@ -98,7 +98,7 @@ pipeline {
                     if (env.BRANCH_NAME == "main") {
                         sh """
                             cd src/main/docker/
-                            docker-compose -p stage down
+                            docker compose -p stage down
                         """
                     }
                 }
@@ -111,7 +111,7 @@ pipeline {
                     if (env.BRANCH_NAME == "main") {
                     sh """
                         cd src/main/docker/
-                        docker-compose -p stage up -d
+                        docker compose -p stage up -d
                     """
                     }
                 }
