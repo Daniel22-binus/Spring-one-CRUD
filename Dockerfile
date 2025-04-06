@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:17-jdk
 
 #set the working directory
 WORKDIR /app
@@ -8,11 +8,11 @@ COPY target/simple-one-crud-0.0.1-SNAPSHOT.jar /app/simple-one-crud-0.0.1-SNAPSH
 
 #environment variable
 ENV DB_HOST=jdbc:mysql://localhost:3306/pantos
-ENV DB_USERNAME=root
-ENV DB_PASSWORD=pass
+#ENV DB_USERNAME=root
+#ENV DB_PASSWORD=pass
 
 #port
 EXPOSE 8081
 
 #run application
-CMD ['java', '-jar', 'simple-one-crud-0.0.1-SNAPSHOT.jar']
+ENTRYPOINT ["java", "-jar", "simple-one-crud-0.0.1-SNAPSHOT.jar"]
