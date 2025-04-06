@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  backend:
+    image: 'com.example.simple-one-crud:latest'
+    ports:
+      - '8081:8081'
+    environment:
+      - DB_HOST=jdbc:mysql://localhost:3306/pantos
+      - DB_USERNAME=root
+      - DB_PASSWORD=pass
